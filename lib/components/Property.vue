@@ -178,7 +178,7 @@
       <!-- Select field based on a oneOf on a simple type (array or simple value) -->
       <!-- cf https://github.com/mozilla-services/react-jsonfullSchema-form/issues/532 -->
       <template v-else-if="oneOfSelect">
-        <v-select
+        <v-autocomplete
           v-model="modelWrapper[modelKey]"
           :items="selectItems"
           :name="fullKey"
@@ -204,7 +204,7 @@
             <select-item :title="data.item[itemTitle]" :options="options" />
           </template>
           <tooltip slot="append-outer" :options="options" :html-description="htmlDescription" />
-        </v-select>
+        </v-autocomplete>
       </template>
 
       <!-- Select field on an ajax response or from an array in another part of the data -->
